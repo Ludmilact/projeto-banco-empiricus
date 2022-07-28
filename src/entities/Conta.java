@@ -1,17 +1,16 @@
-package conta;
+package entities;
 
 public abstract class Conta {
 
     private int numero;
-    private String cpf;
-    private float saldo;
+
+    private Cliente cliente; // TODO: TIREI CPF PQ UMA CONTA NAO TEM UM CPF
+    protected float saldo;
     private boolean ativo;
 
-
-    public Conta (int numero, String cpf) {
+    public Conta (int numero) {
         super();
         this.numero = numero;
-        this.cpf = cpf;
         this.ativo = false;
         this.saldo = 0;
     }
@@ -24,12 +23,12 @@ public abstract class Conta {
         this.numero = numero;
     }
 
-    public String getCpf() {
-        return cpf;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public float getSaldo() {

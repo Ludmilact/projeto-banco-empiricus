@@ -1,15 +1,20 @@
 package entities;
 
-import conta.Conta;
-
 import java.time.LocalDateTime;
 
 public class ContaPoupanca extends Conta {
 
-    LocalDateTime diaAniversarioPoupanca;
+    String diaAniversarioPoupanca;
 
-    public ContaPoupanca(int numero, String cpf, LocalDateTime diaAniversarioPoupanca) {
-        super(numero, cpf);
+    public ContaPoupanca(int numero, String diaAniversarioPoupanca) {
+        super(numero);
+        this.diaAniversarioPoupanca = diaAniversarioPoupanca;
+    }
+    public String getDiaAniversarioPoupanca() {
+        return diaAniversarioPoupanca;
+    }
+
+    public void setDiaAniversarioPoupanca(String diaAniversarioPoupanca) {
         this.diaAniversarioPoupanca = diaAniversarioPoupanca;
     }
     public float correcaoAniversario() {
