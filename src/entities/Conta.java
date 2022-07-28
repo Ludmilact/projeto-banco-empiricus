@@ -47,8 +47,13 @@ public abstract class Conta {
         this.ativo = ativo;
     }
 
-    private static void debito(double valor) {
-        System.out.println("Débito: " + valor);
+    abstract void debitar(double valor); // cada classe tem sua implementaçao de debito
 
+    public void imprirmirExtradoDeMovimentacoes() {
+        // TODO - tudo que a pessoa fez de movimentacao com valores
+    }
+
+    public void tranferir() {
+        // TODO - usar o método debitar para tirar de uma conta e passa para outra
     }
 }
