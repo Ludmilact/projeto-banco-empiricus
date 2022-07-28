@@ -8,6 +8,7 @@ public class Cliente {
     String cpf;
     String dataNascimento; //TODO: pesquisar como fazer local datetime
     double salario;
+    String cnpj;
 
     public String getNome() {
         return nome;
@@ -33,12 +34,12 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
-    public double getSalario() {
-        return salario;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public boolean validarNome() {
@@ -47,16 +48,39 @@ public class Cliente {
         return false;
     }
 
+    /**
+     * Método válidarCpf chama o outro método validarCpf, para validação interna.
+     * @return o método void de validarCpf + get cpf para pegar o último cpf informado.
+     */
     public boolean validarCpf() {
-        //TODO: VALIDAR CPF
-        return false;
+        return validarCpf(getCpf());
     }
+
+    /**
+     * Método static para conseguir recuperar o cpf por parametro,
+     * reduzindo a necessidade de instanciar diversas vezes um cliente.
+     * @param cpf
+     * @return true se o cpf for válido.
+     */
+    public static boolean validarCpf(String cpf) {
+        if (cpf.length() != 11) {
+            return false;
+        } else {
+            System.out.println("CPF VÁLIDO!");
+            return true;
+        }
+    }
+
     public boolean validaDataDeNascimento() {
+
         //TODO: VALIDAR SE A DATA NASCIMENTO É UMA DATA
         return false;
     }
-    public boolean validarSalario() {
-        //TODO: validar se é um número (para ver se nao tem pontos, ou letras)
-        return false;
+    public static boolean validarCNPJ(String cnpj) {
+        if (cnpj.length() != 14) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
