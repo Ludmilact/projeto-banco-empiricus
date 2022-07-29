@@ -66,13 +66,11 @@ public class Cliente {
         if (cpf.length() != 11) {
             return false;
         } else {
-            System.out.println("CPF VÁLIDO!");
             return true;
-        }
+        } //TODO: É TUDO NÚMERO?
     }
 
     public boolean validaDataDeNascimento() {
-
         //TODO: VALIDAR SE A DATA NASCIMENTO É UMA DATA
         return false;
     }
@@ -82,5 +80,10 @@ public class Cliente {
         } else {
             return true;
         }
+    }
+    public static boolean validarSenha (String senha) {
+        if(senha.length() == 5) {
+        }
+        return true;
     }
 }

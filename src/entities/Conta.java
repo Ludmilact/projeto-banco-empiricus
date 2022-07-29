@@ -3,16 +3,17 @@ package entities;
 public abstract class Conta {
 
     private int numero;
-
     private Cliente cliente; // TODO: TIREI CPF PQ UMA CONTA NAO TEM UM CPF
     protected float saldo;
     private boolean ativo;
+    private String senha;
 
-    public Conta (int numero) {
+    public Conta (int numero, String senha) {
         super();
         this.numero = numero;
         this.ativo = false;
         this.saldo = 0;
+        this.senha = senha;
     }
 
     public int getNumero() {
@@ -45,6 +46,14 @@ public abstract class Conta {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     abstract void debitar(double valor); // cada classe tem sua implementaçao de debito

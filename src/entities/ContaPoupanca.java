@@ -6,8 +6,8 @@ public class ContaPoupanca extends Conta {
 
     String diaAniversarioPoupanca;
 
-    public ContaPoupanca(int numero, String diaAniversarioPoupanca) {
-        super(numero);
+    public ContaPoupanca(int numero, String diaAniversarioPoupanca, String senha) {
+        super(numero, senha);
         this.diaAniversarioPoupanca = diaAniversarioPoupanca;
     }
     public String getDiaAniversarioPoupanca() {
