@@ -118,7 +118,7 @@ public class Menu {
 
         do {
             System.out.println("Digite o seu nome: ");
-            cliente.setNome(entrada.next());
+            cliente.setNome(entrada.nextLine());
         } while (Cliente.validarNome("Nome"));
 
         boolean cpfValido = true;
